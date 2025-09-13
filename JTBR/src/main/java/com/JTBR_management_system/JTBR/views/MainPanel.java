@@ -17,7 +17,7 @@ public class MainPanel extends Views{
 		cardLayout = new CardLayout();
 		setLayout(cardLayout);
 		
-		//new Navigate().init(new MainPanel(), cardLayout);
+		new Navigate().init(new MainPanel(), cardLayout);
 		add(new DashboardPanel(), "Dashboard");
 		//cardLayout.show(new MainPanel(), "Dashboard");
 	}
