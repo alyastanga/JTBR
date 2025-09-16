@@ -1,4 +1,7 @@
 package com.JTBR_management_system.JTBR.views;
+import java.awt.event.ActionListener;
+import java.awt.event.FocusListener;
+
 import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
@@ -20,10 +23,10 @@ public class LoginPanel extends Views{
 	private JButton loginBtn;
 	private JLabel titleLabel;
 	private JLabel titleLabel2;
+	private JLabel lblmsg;
 	
 	public LoginPanel() {
 		initComponents();
-		getViewName();
 	}
 	
 	@Override
@@ -58,13 +61,6 @@ public class LoginPanel extends Views{
 		loginBtn = new JButton("Login");
 		loginBtn.setBackground(Colors.Gray);
 		buttonHolder.add(loginBtn, "growx");
-		
-		loginBtn.addActionListener(e -> {
-			String username = usernameField.getText();
-			String password = new String(passwordField.getPassword());
-			System.out.println("Username: " + username + ", Password: " + password);
-			
-		});
 		return buttonHolder;
 	}
 	
@@ -89,6 +85,30 @@ public class LoginPanel extends Views{
 		return titleHolder;
 	}
 	
+	public void loginListener(ActionListener listener) {
+		loginBtn.addActionListener(listener);
+	}
+	
+	public String getUsername() {
+		return usernameField.getText();
+	}
+	
+	public String getPassword() {
+		return new String(passwordField.getPassword());
+	}
+	
+	public void usernameListener( FocusListener listener) {
+		usernameField.addFocusListener(listener);
+	}
+	
+	public void passwordListener( FocusListener listener) {
+		passwordField.addFocusListener(listener);
+	}
+	
+	public void showError(String msg) {
+		lblmsg = new JLabel(msg);
+		lblmsg.setForeground(Colors.Red);
+	}
 	
 
 }

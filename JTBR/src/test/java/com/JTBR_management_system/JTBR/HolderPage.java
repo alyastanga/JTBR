@@ -2,7 +2,7 @@ package com.JTBR_management_system.JTBR;
 
 import javax.swing.JFrame;
 
-import com.JTBR_management_system.JTBR.views.HolderPanel;
+import com.JTBR_management_system.JTBR.views.Holder.HolderPanel;
 
 
 public class HolderPage extends JFrame {
